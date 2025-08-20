@@ -27,10 +27,47 @@
 <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../../favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
+<script>
+// PREVENT TITLE OVERRIDE - RUNS BEFORE EXTERNAL JS
+(function() {
+    const correctTitle = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+    document.title = correctTitle;
+    
+    // Override title property
+    Object.defineProperty(document, 'title', {
+        get: function() { return correctTitle; },
+        set: function() { return correctTitle; }
+    });
+    
+    // Monitor for title changes
+    const observer = new MutationObserver(function(mutations) {
+        if (document.title !== correctTitle) {
+            document.title = correctTitle;
+        }
+    });
+    
+    observer.observe(document.querySelector('title'), {
+        childList: true,
+        subtree: true
+    });
+})();
+</script>
 <script src="../../../tag/js/f.txt" async=""></script>
 <script>
-// Force correct title and prevent overrides
+// Force correct title and prevent overrides - IMMEDIATE
 document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+
+// Override any title changes immediately
+const originalTitle = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+Object.defineProperty(document, 'title', {
+    get: function() {
+        return originalTitle;
+    },
+    set: function(value) {
+        // Ignore any attempts to change the title
+        return originalTitle;
+    }
+});
 
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {

@@ -89,6 +89,16 @@ const hideFooterElements = () => {
 hideFooterElements();
 setInterval(hideFooterElements, 500);
 
+// Add a visible indicator that our script is running
+console.log('Italian Brainrot Archive script loaded successfully!');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded - checking for title and footer issues...');
+    setTimeout(() => {
+        console.log('Current title:', document.title);
+        console.log('Current page content length:', document.body.textContent.length);
+    }, 2000);
+});
+
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all wiki-folding elements

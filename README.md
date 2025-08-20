@@ -1,9 +1,6 @@
-# Italian Brainrot Archive S2: Mutation Chronicles
+# Italian Brainrot Characters
 
 A comprehensive collection of characters from the Italian Brainrot universe, featuring a modern, responsive website with expandable content and a fixed table of contents.
-
-**🌐 Live Site**: https://brainrotarchive.xyz  
-**📁 GitHub**: https://github.com/cssbandit/brainrotarchive.xyz
 
 ## ✅ Features Fixed
 

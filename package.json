@@ -1,0 +1,37 @@
+{
+  "name": "italian-brainrot-characters",
+  "version": "1.0.0",
+  "description": "A modern, responsive website showcasing the characters from Italian Brainrot",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "build": "echo 'No build step required - static site'",
+    "deploy": "netlify deploy --prod --dir=.",
+    "deploy:preview": "netlify deploy --dir=.",
+    "validate": "node -e \"console.log('Validating files...'); require('./characters.js'); console.log('✅ All files valid')\""
+  },
+  "keywords": [
+    "italian-brainrot",
+    "characters",
+    "wiki",
+    "static-site",
+    "netlify"
+  ],
+  "author": "Italian Brainrot Community",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "netlify-cli": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/italian-brainrot-characters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/italian-brainrot-characters/issues"
+  },
+  "homepage": "https://your-site-name.netlify.app"
+}

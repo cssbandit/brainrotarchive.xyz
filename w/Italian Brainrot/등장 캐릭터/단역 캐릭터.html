@@ -217,7 +217,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .footer,
             .wiki-footer,
             [class*="footer"],
-            [id*="footer"] {
+            [id*="footer"],
+            div:contains("namu.wiki"),
+            div:contains("Contáctenos"),
+            div:contains("Operado por umanle"),
+            div:contains("Hecho con ❤️"),
+            div:contains("Su zona horaria"),
+            div:contains("Impulsado por the seed"),
+            div:contains("This site is protected by reCAPTCHA"),
+            div:contains("This site is protected by hCaptcha") {
                 display: none !important;
             }
             
@@ -282,6 +290,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
             }
         }, 1000);
+        
+        // Hide footer elements by text content
+        const hideFooterElements = () => {
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach(element => {
+                const text = element.textContent || '';
+                if (text.includes('namu.wiki') || 
+                    text.includes('Contáctenos') || 
+                    text.includes('Operado por umanle') ||
+                    text.includes('Hecho con ❤️') ||
+                    text.includes('Su zona horaria') ||
+                    text.includes('Impulsado por the seed') ||
+                    text.includes('This site is protected by reCAPTCHA') ||
+                    text.includes('This site is protected by hCaptcha')) {
+                    element.style.display = 'none';
+                }
+            });
+        };
+        
+        // Run immediately and every 2 seconds
+        hideFooterElements();
+        setInterval(hideFooterElements, 2000);
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

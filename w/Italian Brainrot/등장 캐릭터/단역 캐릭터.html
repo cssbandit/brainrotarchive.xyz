@@ -29,8 +29,18 @@
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
 <script src="../../../tag/js/f.txt" async=""></script>
 <script>
-// Force correct title and prevent overrides
+// Force correct title and prevent overrides - IMMEDIATE
 document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+
+// Override any title changes immediately
+Object.defineProperty(document, 'title', {
+    get: function() {
+        return 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+    },
+    set: function() {
+        // Do nothing - prevent any changes
+    }
+});
 
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -328,6 +338,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Run immediately and every second
         fixTitleSpans();
         setInterval(fixTitleSpans, 1000);
+        
+        // Watch for any DOM changes and fix title immediately
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1 && node.textContent) {
+                            if (node.textContent.includes('ITalian Brainrot') || 
+                                node.textContent.includes('Appearance Character') ||
+                                node.textContent.includes('Dan Station Character')) {
+                                node.textContent = node.textContent.replace(/ITalian Brainrot\/Appearance Character\/Dan Station Character/g, 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

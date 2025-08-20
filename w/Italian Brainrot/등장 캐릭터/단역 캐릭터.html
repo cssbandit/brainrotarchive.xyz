@@ -28,27 +28,26 @@
 <link rel="icon" href="../../../favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
 <script>
-// IMMEDIATE title override - must run before any other scripts
+// ULTIMATE title override - completely prevent any title changes
 (function() {
-    // Override document.title immediately
     const originalTitle = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
     
     // Set title immediately
     document.title = originalTitle;
     
-    // Override the title property completely
+    // Override document.title completely
     Object.defineProperty(document, 'title', {
         get: function() {
             return originalTitle;
         },
         set: function(value) {
-            // Ignore any attempts to change the title
             return originalTitle;
         },
-        configurable: false
+        configurable: false,
+        enumerable: true
     });
     
-    // Also override window.title
+    // Override window.title
     Object.defineProperty(window, 'title', {
         get: function() {
             return originalTitle;
@@ -56,8 +55,49 @@
         set: function(value) {
             return originalTitle;
         },
-        configurable: false
+        configurable: false,
+        enumerable: true
     });
+    
+    // Override any script that tries to change the title
+    const originalCreateElement = document.createElement;
+    document.createElement = function(tagName) {
+        const element = originalCreateElement.call(document, tagName);
+        if (tagName.toLowerCase() === 'script') {
+            const originalSetAttribute = element.setAttribute;
+            element.setAttribute = function(name, value) {
+                if (name === 'src' && value.includes('f.txt')) {
+                    // Block the external script completely
+                    return;
+                }
+                return originalSetAttribute.call(this, name, value);
+            };
+        }
+        return element;
+    };
+    
+    // Monitor for any title changes and immediately revert them
+    const observer = new MutationObserver(function(mutations) {
+        if (document.title !== originalTitle) {
+            document.title = originalTitle;
+        }
+    });
+    
+    // Start observing as soon as possible
+    if (document.head) {
+        observer.observe(document.head, { childList: true, subtree: true });
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            observer.observe(document.head, { childList: true, subtree: true });
+        });
+    }
+    
+    // Continuous title enforcement
+    setInterval(function() {
+        if (document.title !== originalTitle) {
+            document.title = originalTitle;
+        }
+    }, 50);
 })();
 </script>
 <!-- External script blocked to prevent title override -->

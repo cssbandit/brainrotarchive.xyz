@@ -10,6 +10,7 @@
   from = "/*"
   to = "/w/Italian Brainrot/등장 캐릭터/단역 캐릭터.html"
   status = 200
+  force = true
 
 [build.environment]
   NODE_VERSION = "18"

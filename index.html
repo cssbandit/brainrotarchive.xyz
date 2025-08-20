@@ -212,6 +212,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 display: none !important;
             }
             
+            /* Hide footer completely */
+            footer, .footer, [class*="footer"], [id*="footer"] {
+                display: none !important;
+            }
+            
+            /* Hide specific footer text */
+            *:contains("namu.wiki"),
+            *:contains("Contáctenos"),
+            *:contains("Términos de uso"),
+            *:contains("Operado por umanle S.R.L."),
+            *:contains("Hecho con ❤️ en Asunción"),
+            *:contains("Su zona horaria"),
+            *:contains("Impulsado por the seed engine"),
+            *:contains("한국어"),
+            *:contains("reCAPTCHA"),
+            *:contains("hCaptcha") {
+                display: none !important;
+            }
+            
             /* Fix arrow visibility in headings */
             h2 a[href^="#"], h3 a[href^="#"] {
                 color: #ffd700 !important;
@@ -273,6 +292,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
             }
         }, 1000);
+        
+        // Hide footer completely
+        const footerElements = document.querySelectorAll('footer, .footer, [class*="footer"], [id*="footer"]');
+        footerElements.forEach(element => {
+            element.style.display = 'none';
+        });
+        
+        // Hide specific footer content
+        const footerTexts = document.querySelectorAll('*');
+        footerTexts.forEach(element => {
+            if (element.textContent && (
+                element.textContent.includes('namu.wiki') ||
+                element.textContent.includes('Contáctenos') ||
+                element.textContent.includes('Términos de uso') ||
+                element.textContent.includes('Operado por umanle S.R.L.') ||
+                element.textContent.includes('Hecho con ❤️ en Asunción') ||
+                element.textContent.includes('Su zona horaria') ||
+                element.textContent.includes('Impulsado por the seed engine') ||
+                element.textContent.includes('한국어') ||
+                element.textContent.includes('reCAPTCHA') ||
+                element.textContent.includes('hCaptcha')
+            )) {
+                element.style.display = 'none';
+            }
+        });
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

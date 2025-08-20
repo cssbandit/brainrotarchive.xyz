@@ -313,6 +313,22 @@ document.addEventListener('DOMContentLoaded', function() {
         hideFooterElements();
         setInterval(hideFooterElements, 2000);
         
+        // Fix any span elements with old title
+        const fixTitleSpans = () => {
+            const spans = document.querySelectorAll('span[data-v-10bf1570]');
+            spans.forEach(span => {
+                if (span.textContent.includes('ITalian Brainrot') || 
+                    span.textContent.includes('Appearance Character') ||
+                    span.textContent.includes('Dan Station Character')) {
+                    span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+                }
+            });
+        };
+        
+        // Run immediately and every second
+        fixTitleSpans();
+        setInterval(fixTitleSpans, 1000);
+        
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');
         if (categorySection) {

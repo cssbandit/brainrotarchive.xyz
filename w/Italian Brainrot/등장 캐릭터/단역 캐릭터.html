@@ -27,38 +27,25 @@
 <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../../favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
-<script src="../../../tag/js/f.txt" async=""></script>
+<!-- <script src="../../../tag/js/f.txt" async=""></script> -->
 <script>
-// Wait for external script to load, then override everything
-window.addEventListener('load', function() {
-    // Force correct title and prevent overrides - AFTER external script loads
-    document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+// Force correct title immediately
+document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
 
-    // Override any title changes immediately
-    Object.defineProperty(document, 'title', {
-        get: function() {
-            return 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-        },
-        set: function() {
-            // Do nothing - prevent any changes
+// Directly find and replace the problematic span
+const replaceOldTitle = () => {
+    const spans = document.querySelectorAll('span[data-v-10bf1570]');
+    spans.forEach(span => {
+        if (span.textContent === 'ITalian Brainrot/Appearance Character/Dan Station Character') {
+            span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+            console.log('Title span replaced!');
         }
     });
-    
-    // Directly find and replace the problematic span
-    const replaceOldTitle = () => {
-        const spans = document.querySelectorAll('span[data-v-10bf1570]');
-        spans.forEach(span => {
-            if (span.textContent === 'ITalian Brainrot/Appearance Character/Dan Station Character') {
-                span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-                console.log('Title span replaced!');
-            }
-        });
-    };
-    
-    // Run immediately and continuously
-    replaceOldTitle();
-    setInterval(replaceOldTitle, 100);
-});
+};
+
+// Run immediately and continuously
+replaceOldTitle();
+setInterval(replaceOldTitle, 100);
 
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {

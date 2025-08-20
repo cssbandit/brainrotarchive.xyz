@@ -2,6 +2,11 @@
   publish = "."
 
 [[redirects]]
+  from = "/"
+  to = "/w/Italian Brainrot/등장 캐릭터/단역 캐릭터.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/w/Italian Brainrot/등장 캐릭터/단역 캐릭터.html"
   status = 200

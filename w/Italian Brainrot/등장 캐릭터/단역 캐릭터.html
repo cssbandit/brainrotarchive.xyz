@@ -256,29 +256,13 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         document.head.appendChild(style);
         
-        // Prevent flash of original content and fix title immediately
+        // Prevent flash of original content
         document.body.style.visibility = 'hidden';
-        
-        // Fix title immediately to prevent flash
-        const titleSpans = document.querySelectorAll('span[data-v-10bf1570]');
-        titleSpans.forEach(span => {
-            if (span.textContent.includes('ITalian Brainrot') || span.textContent.includes('Appearance Character')) {
-                span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-            }
-        });
         
         // Show content after all modifications are complete
         setTimeout(() => {
             document.body.style.visibility = 'visible';
-        }, 50);
-        
-        // Force update the main title in case it's still showing old content (backup)
-        const titleSpansBackup = document.querySelectorAll('span[data-v-10bf1570]');
-        titleSpansBackup.forEach(span => {
-            if (span.textContent.includes('ITalian Brainrot') || span.textContent.includes('Appearance Character')) {
-                span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-            }
-        });
+        }, 100);
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

@@ -264,6 +264,14 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.visibility = 'visible';
         }, 100);
         
+        // Force update the main title in case it's still showing old content
+        const titleSpans = document.querySelectorAll('span[data-v-10bf1570]');
+        titleSpans.forEach(span => {
+            if (span.textContent.includes('ITalian Brainrot') || span.textContent.includes('Appearance Character')) {
+                span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+            }
+        });
+        
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');
         if (categorySection) {

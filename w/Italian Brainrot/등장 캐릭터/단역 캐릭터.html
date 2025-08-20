@@ -27,77 +27,10 @@
 <link rel="icon" href="../../../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="../../../favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
-<!-- <script src="../../../tag/js/f.txt" async=""></script> -->
+<script src="../../../tag/js/f.txt" async=""></script>
 <script>
-// Prevent any external scripts from loading
-const originalCreateElement = document.createElement;
-document.createElement = function(tagName) {
-    const element = originalCreateElement.call(document, tagName);
-    if (tagName.toLowerCase() === 'script') {
-        element.addEventListener('load', function() {
-            if (this.src && this.src.includes('f.txt')) {
-                console.log('Blocked external script:', this.src);
-                this.remove();
-            }
-        });
-    }
-    return element;
-};
-</script>
-<script>
-// Force correct title immediately
-document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-
-// Directly find and replace the problematic span
-const replaceOldTitle = () => {
-    const spans = document.querySelectorAll('span[data-v-10bf1570]');
-    spans.forEach(span => {
-        if (span.textContent === 'ITalian Brainrot/Appearance Character/Dan Station Character') {
-            span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-            console.log('Title span replaced!');
-        }
-    });
-};
-
-// Run immediately and continuously
-replaceOldTitle();
-setInterval(replaceOldTitle, 100);
-
-// Also hide footer elements immediately and continuously
-const hideFooterElements = () => {
-    const allElements = document.querySelectorAll('*');
-    allElements.forEach(element => {
-        const text = element.textContent || '';
-        if (text.includes('namu.wiki') || 
-            text.includes('Contáctenos') || 
-            text.includes('Operado por umanle') ||
-            text.includes('Hecho con ❤️') ||
-            text.includes('Su zona horaria') ||
-            text.includes('Impulsado por the seed') ||
-            text.includes('This site is protected by reCAPTCHA') ||
-            text.includes('This site is protected by hCaptcha') ||
-            text.includes('Términos de uso') ||
-            text.includes('한국어')) {
-            element.style.display = 'none';
-            element.style.visibility = 'hidden';
-            element.style.opacity = '0';
-        }
-    });
-};
-
-// Run footer hiding immediately and continuously
-hideFooterElements();
-setInterval(hideFooterElements, 500);
-
-// Add a visible indicator that our script is running
-console.log('Italian Brainrot Archive script loaded successfully!');
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded - checking for title and footer issues...');
-    setTimeout(() => {
-        console.log('Current title:', document.title);
-        console.log('Current page content length:', document.body.textContent.length);
-    }, 2000);
-});
+// Force correct title and prevent overrides
+document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
 
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -279,23 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 display: none !important;
             }
             
-            /* Hide footer completely */
-            footer,
-            .footer,
-            .wiki-footer,
-            [class*="footer"],
-            [id*="footer"],
-            div:contains("namu.wiki"),
-            div:contains("Contáctenos"),
-            div:contains("Operado por umanle"),
-            div:contains("Hecho con ❤️"),
-            div:contains("Su zona horaria"),
-            div:contains("Impulsado por the seed"),
-            div:contains("This site is protected by reCAPTCHA"),
-            div:contains("This site is protected by hCaptcha") {
-                display: none !important;
-            }
-            
             /* Fix arrow visibility in headings */
             h2 a[href^="#"], h3 a[href^="#"] {
                 color: #ffd700 !important;
@@ -353,70 +269,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Continuously ensure correct title
         setInterval(() => {
-            if (document.title !== 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)') {
-                document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
+            if (document.title !== 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki') {
+                document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
             }
         }, 1000);
-        
-        // Hide footer elements by text content
-        const hideFooterElements = () => {
-            const allElements = document.querySelectorAll('*');
-            allElements.forEach(element => {
-                const text = element.textContent || '';
-                if (text.includes('namu.wiki') || 
-                    text.includes('Contáctenos') || 
-                    text.includes('Operado por umanle') ||
-                    text.includes('Hecho con ❤️') ||
-                    text.includes('Su zona horaria') ||
-                    text.includes('Impulsado por the seed') ||
-                    text.includes('This site is protected by reCAPTCHA') ||
-                    text.includes('This site is protected by hCaptcha')) {
-                    element.style.display = 'none';
-                }
-            });
-        };
-        
-        // Run immediately and every 2 seconds
-        hideFooterElements();
-        setInterval(hideFooterElements, 2000);
-        
-        // Fix any span elements with old title
-        const fixTitleSpans = () => {
-            const spans = document.querySelectorAll('span[data-v-10bf1570]');
-            spans.forEach(span => {
-                if (span.textContent.includes('ITalian Brainrot') || 
-                    span.textContent.includes('Appearance Character') ||
-                    span.textContent.includes('Dan Station Character')) {
-                    span.textContent = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
-                }
-            });
-        };
-        
-        // Run immediately and every second
-        fixTitleSpans();
-        setInterval(fixTitleSpans, 1000);
-        
-        // Watch for any DOM changes and fix title immediately
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList') {
-                    mutation.addedNodes.forEach(function(node) {
-                        if (node.nodeType === 1 && node.textContent) {
-                            if (node.textContent.includes('ITalian Brainrot') || 
-                                node.textContent.includes('Appearance Character') ||
-                                node.textContent.includes('Dan Station Character')) {
-                                node.textContent = node.textContent.replace(/ITalian Brainrot\/Appearance Character\/Dan Station Character/g, 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)');
-                            }
-                        }
-                    });
-                }
-            });
-        });
-        
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

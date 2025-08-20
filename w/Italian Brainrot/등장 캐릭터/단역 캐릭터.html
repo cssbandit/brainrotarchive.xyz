@@ -29,6 +29,9 @@
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
 <script src="../../../tag/js/f.txt" async=""></script>
 <script>
+// Force correct title and prevent overrides
+document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all wiki-folding elements
@@ -263,6 +266,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             document.body.style.visibility = 'visible';
         }, 100);
+        
+        // Continuously ensure correct title
+        setInterval(() => {
+            if (document.title !== 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki') {
+                document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+            }
+        }, 1000);
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

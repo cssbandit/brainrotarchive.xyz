@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width, viewport-fit=cover">
-<title>Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki</title>
+<title id="forced-title">Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki</title>
 <meta http-equv="x-ua-compatible" content="ie=edge">
 <meta name="generator" content="the seed">
 <meta name="mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
 <link rel="icon" href="../../../favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../../img/apple_icon.png">
 <script>
-// ULTIMATE title override - completely prevent any title changes
+// NUCLEAR title override - rewrite the title tag itself continuously
 (function() {
     const originalTitle = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
     
@@ -92,12 +92,27 @@
         });
     }
     
-    // Continuous title enforcement
+    // NUCLEAR: Continuously rewrite the title tag itself
     setInterval(function() {
+        // Force the title tag content
+        const titleTag = document.getElementById('forced-title');
+        if (titleTag && titleTag.textContent !== originalTitle) {
+            titleTag.textContent = originalTitle;
+        }
+        
+        // Also force document.title
         if (document.title !== originalTitle) {
             document.title = originalTitle;
         }
-    }, 50);
+        
+        // Nuclear option: recreate the title tag if needed
+        if (!titleTag) {
+            const newTitle = document.createElement('title');
+            newTitle.id = 'forced-title';
+            newTitle.textContent = originalTitle;
+            document.head.insertBefore(newTitle, document.head.firstChild);
+        }
+    }, 10); // Check every 10ms - nuclear frequency
 })();
 </script>
 <!-- External script blocked to prevent title override -->

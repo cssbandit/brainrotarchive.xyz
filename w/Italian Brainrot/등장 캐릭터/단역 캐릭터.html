@@ -30,7 +30,7 @@
 <script src="../../../tag/js/f.txt" async=""></script>
 <script>
 // Force correct title and prevent overrides
-document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
 
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -212,6 +212,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 display: none !important;
             }
             
+            /* Hide footer completely */
+            footer,
+            .footer,
+            .wiki-footer,
+            [class*="footer"],
+            [id*="footer"] {
+                display: none !important;
+            }
+            
             /* Fix arrow visibility in headings */
             h2 a[href^="#"], h3 a[href^="#"] {
                 color: #ffd700 !important;
@@ -269,8 +278,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Continuously ensure correct title
         setInterval(() => {
-            if (document.title !== 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki') {
-                document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+            if (document.title !== 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)') {
+                document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025)';
             }
         }, 1000);
         

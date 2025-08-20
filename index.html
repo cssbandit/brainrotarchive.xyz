@@ -32,6 +32,16 @@
 // Force correct title and prevent overrides
 document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
 
+// Override any title changes immediately
+Object.defineProperty(document, 'title', {
+    get: function() {
+        return 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+    },
+    set: function() {
+        // Do nothing - prevent title from being changed
+    }
+});
+
 // Fix for wiki-folding expand/collapse functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all wiki-folding elements
@@ -293,30 +303,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 1000);
         
-        // Hide footer completely
-        const footerElements = document.querySelectorAll('footer, .footer, [class*="footer"], [id*="footer"]');
-        footerElements.forEach(element => {
-            element.style.display = 'none';
-        });
-        
-        // Hide specific footer content
-        const footerTexts = document.querySelectorAll('*');
-        footerTexts.forEach(element => {
-            if (element.textContent && (
-                element.textContent.includes('namu.wiki') ||
-                element.textContent.includes('Contáctenos') ||
-                element.textContent.includes('Términos de uso') ||
-                element.textContent.includes('Operado por umanle S.R.L.') ||
-                element.textContent.includes('Hecho con ❤️ en Asunción') ||
-                element.textContent.includes('Su zona horaria') ||
-                element.textContent.includes('Impulsado por the seed engine') ||
-                element.textContent.includes('한국어') ||
-                element.textContent.includes('reCAPTCHA') ||
-                element.textContent.includes('hCaptcha')
-            )) {
+        // Hide footer completely - run immediately
+        function hideFooter() {
+            const footerElements = document.querySelectorAll('footer, .footer, [class*="footer"], [id*="footer"]');
+            footerElements.forEach(element => {
                 element.style.display = 'none';
-            }
-        });
+                element.remove();
+            });
+            
+            // Hide specific footer content
+            const allElements = document.querySelectorAll('*');
+            allElements.forEach(element => {
+                if (element.textContent && (
+                    element.textContent.includes('namu.wiki') ||
+                    element.textContent.includes('Contáctenos') ||
+                    element.textContent.includes('Términos de uso') ||
+                    element.textContent.includes('Operado por umanle S.R.L.') ||
+                    element.textContent.includes('Hecho con ❤️ en Asunción') ||
+                    element.textContent.includes('Su zona horaria') ||
+                    element.textContent.includes('Impulsado por the seed engine') ||
+                    element.textContent.includes('한국어') ||
+                    element.textContent.includes('reCAPTCHA') ||
+                    element.textContent.includes('hCaptcha')
+                )) {
+                    element.style.display = 'none';
+                    element.remove();
+                }
+            });
+        }
+        
+        // Run immediately and continuously
+        hideFooter();
+        setInterval(hideFooter, 1000);
+        
+
         
         // Hide categories section
         const categorySection = document.querySelector('._2LykomDc');

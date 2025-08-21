@@ -1,17 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki</title>
-    <meta name="description" content="Italian Brainrot Archive S2: Mutation Chronicles - A comprehensive collection of new characters from the viral Italian Brainrot series, featuring mutated animals with millions of views on TikTok and social media.">
-    <meta property="og:title" content="Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki">
-    <meta property="og:description" content="Italian Brainrot Archive S2: Mutation Chronicles - A comprehensive collection of new characters from the viral Italian Brainrot series, featuring mutated animals with millions of views on TikTok and social media.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Brainrot Archive S2: Mutation Chronicles (August 2025)</title>
+    <meta name="description" content="Italian Brainrot Archive S2: Mutation Chronicles - A comprehensive collection of new characters from the viral Italian Brainrot series">
+    <meta property="og:title" content="Italian Brainrot Archive S2: Mutation Chronicles (August 2025)">
+    <meta property="og:description" content="Italian Brainrot Archive S2: Mutation Chronicles - A comprehensive collection of new characters from the viral Italian Brainrot series">
     <meta property="og:url" content="https://brainrotarchive.xyz">
     <meta property="og:type" content="website">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    
     <style>
         * {
             margin: 0;
@@ -21,9 +19,10 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #000;
-            color: #fff;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
             line-height: 1.6;
+            min-height: 100vh;
         }
         
         .container {
@@ -36,63 +35,74 @@
         }
         
         .main-content {
-            grid-column: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .toc-sidebar {
-            grid-column: 2;
             position: sticky;
             top: 20px;
             height: fit-content;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         h1 {
-            color: #ffd700;
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .intro {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            padding: 25px;
+            text-align: center;
             margin-bottom: 40px;
-            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
-        }
-        
-        .intro h2 {
-            color: #ffd700;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .intro p {
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
         
         .character-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
+            margin-top: 30px;
         }
         
         .character-card {
-            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
-            border: 2px solid #ffd700;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 15px;
             padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
         }
         
         .character-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2);
-            border-color: #ffed4e;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        
+        .character-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ffd700, #ff6b6b);
         }
         
         .character-image {
@@ -101,1340 +111,755 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
-            border: 2px solid #ffd700;
+            border: 2px solid rgba(255, 215, 0, 0.3);
         }
         
         .character-name {
-            color: #ffd700;
-            font-size: 1.3em;
+            font-size: 1.3rem;
             font-weight: bold;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .character-icon {
-            font-size: 1.5em;
-        }
-        
-        .character-info {
-            margin-bottom: 15px;
-        }
-        
-        .character-info strong {
+            margin-bottom: 10px;
             color: #ffd700;
+        }
+        
+        .character-motifs {
+            margin-bottom: 10px;
+        }
+        
+        .motif-tag {
             display: inline-block;
-            min-width: 80px;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 2px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .character-bgm {
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #ccc;
         }
         
         .character-description {
-            color: #e0e0e0;
-            line-height: 1.6;
             margin-bottom: 15px;
+            color: #e0e0e0;
+            font-size: 0.9rem;
         }
         
         .tiktok-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #ffd700;
+            display: inline-block;
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            color: white;
             text-decoration: none;
-            font-weight: bold;
             padding: 8px 15px;
-            border: 1px solid #ffd700;
-            border-radius: 8px;
+            border-radius: 20px;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
         
         .tiktok-link:hover {
-            background: #ffd700;
-            color: #000;
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 0, 80, 0.4);
         }
         
-        .toc {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            padding: 20px;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
-        }
-        
-        .toc h3 {
+        .toc-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
             color: #ffd700;
-            margin-bottom: 20px;
-            font-size: 1.3em;
             text-align: center;
         }
         
-        .toc ul {
+        .toc-list {
             list-style: none;
         }
         
-        .toc li {
+        .toc-item {
             margin-bottom: 8px;
         }
         
-        .toc a {
-            color: #fff;
+        .toc-link {
+            color: #ffffff;
             text-decoration: none;
             display: block;
-            padding: 8px 12px;
-            border-radius: 8px;
+            padding: 5px 10px;
+            border-radius: 5px;
             transition: all 0.3s ease;
-            border-left: 3px solid transparent;
+            font-size: 0.9rem;
         }
         
-        .toc a:hover {
-            background: rgba(255, 215, 0, 0.1);
-            border-left-color: #ffd700;
-            color: #ffd700;
-        }
-        
-        .toc a.active {
+        .toc-link:hover {
             background: rgba(255, 215, 0, 0.2);
-            border-left-color: #ffd700;
             color: #ffd700;
         }
         
-        .stats {
-            text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-        }
-        
-        .stats h3 {
-            color: #ffd700;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        
-        .stats p {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        
-        .stats .highlight {
+        .toc-number {
             color: #ffd700;
             font-weight: bold;
-            font-size: 1.3em;
+            margin-right: 8px;
         }
         
-        @media (max-width: 1200px) {
+        @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
             }
             
             .toc-sidebar {
-                grid-column: 1;
                 position: static;
                 order: -1;
             }
             
-            .toc {
-                max-height: none;
-            }
-        }
-        
-        @media (max-width: 768px) {
             .character-grid {
                 grid-template-columns: 1fr;
             }
             
-            .character-card {
-                margin-bottom: 20px;
-            }
-            
             h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
         }
         
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         
         ::-webkit-scrollbar-track {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         ::-webkit-scrollbar-thumb {
-            background: #ffd700;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
             border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: #ffed4e;
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="main-content">
-            <h1>🧬 Italian Brainrot Archive S2: Mutation Chronicles (August 2025)</h1>
+            <h1>Italian Brainrot Archive S2: Mutation Chronicles (August 2025)</h1>
             
             <div class="intro">
-                <h2>🎭 Welcome to the Mutation Chronicles</h2>
                 <p>Italian Brainrot Archive S2: Mutation Chronicles - A comprehensive collection of new characters from the viral Italian Brainrot series, featuring mutated animals that have gained millions of views on TikTok and other social media platforms. Each character includes detailed descriptions, background music, and direct links to their original TikTok videos.</p>
-                <p><strong>Each character featured in this archive has achieved millions of views across social media platforms, particularly on TikTok where the Italian Brainrot series has gone viral.</strong></p>
             </div>
             
-            <div class="character-grid">
-                <!-- Character 1: Talpa Di Ferro -->
-                <div class="character-card" id="talpa-di-ferro">
-                    <img src="../../../i/FZXtwmQg5hsDkWKL_8FKRpQJGmtdLps56cd52m-fHhs9bxEgOJowQW5LTwv_R6KJ6vDutQfMJuOGFnP6j4gN4tXZCqlEhd4CReDxD5tUf-TP2JB5DfCbwwuzi4V2qhwRuitpJsMjuRzp4_SdvT51QA.webp" alt="Talpa Di Ferro" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦫</span>
-                        Talpa Di Ferro
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Mole, Cyborg<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A mechanized mole character with multiple cyborg parts. Eyes and forehead equipped with microchips for scanning organisms. Front teeth contain drills that can penetrate any solid object, including metal.
-                    </div>
-                    <a href="https://www.tiktok.com/@italianbrainrotanimals01/video/7524020191127211286" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 2: Octopussini Zucchini -->
-                <div class="character-card" id="octopussini-zucchini">
-                    <img src="../../../i/ua0dzQvavKk3MVYlMLB9z1CsA0xEadLxaIRGWCdO4VQos3wbHSpIB6AswnKSD2NKjfo0roSOkLW09GDxjU4ZKNt_zwUJhy97PAqfSf9gTo3cRnDBy-6pjUbmQiorr6VJ-KyV7t4iozMyhA37GfGyiw.webp" alt="Octopussini Zucchini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐙</span>
-                        Octopussini Zucchini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Octopus, Zucchini<br>
-                        <strong>BGM:</strong> Suspense Horror Piano and Music box
-                    </div>
-                    <div class="character-description">
-                        A mysterious octopus-vegetable hybrid creature with tentacles that resemble zucchini. Known for its ability to camouflage among garden vegetables.
-                    </div>
-                    <a href="https://www.tiktok.com/@patataposseduta/video/7491326295675079958" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 3: Borbano Capyformaggio -->
-                <div class="character-card" id="borbano-capyformaggio">
-                    <img src="../../../i/sXEUSFWM9xvB_jy7FV-VBclsvnnPYXYKSymoKIYRMyhnbIOc-iXmwPUiMw_fX0-JMaQoutfKxpPnr7AYjvLkf7J6YIuajmsFa2FO2hzB-W_nyDGUHlqwDn3x2IaYVaxS-qu8pf4Z4Oo-QaM_oP79vg.webp" alt="Borbano Capyformaggio" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🧀</span>
-                        Borbano Capyformaggio
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Capybara, Cheese<br>
-                        <strong>BGM:</strong> Steven Universe
-                    </div>
-                    <div class="character-description">
-                        A calm capybara made entirely of cheese. This character combines the peaceful nature of capybaras with the creamy texture of Italian cheese.
-                    </div>
-                    <a href="https://www.tiktok.com/@glorbofruttodrillo/video/7478354089848392982" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 4: Pipi Mango -->
-                <div class="character-card" id="pipi-mango">
-                    <img src="../../../i/dG1kMWRPewuxlLyd1Mnnqeadk_uzuu_4WW92ff1luBki80-bLKaceTPVPRlal-AttbU2Ymn2Q8kVIUMPHJYk3d_AJMcxIko8eR-B3ZCnnI2SdVBexyVy5sGsUy84vrj2MFLcA7a652tPirTGdAipdQ.webp" alt="Pipi Mango" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🥭</span>
-                        Pipi Mango
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Weasel, Mango, Feet<br>
-                        <strong>BGM:</strong> 一笑湖 -dJ Remix
-                    </div>
-                    <div class="character-description">
-                        A tropical weasel character that has evolved to resemble a mango. Known for its unusual foot-like appendages and sweet fruity scent.
-                    </div>
-                    <a href="https://www.tiktok.com/@lifewatching1/video/7484050607570013462" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 5: Bonana Sharkolo -->
-                <div class="character-card" id="bonana-sharkolo">
-                    <img src="../../../i/XmgumWiupczCBnG26XdWmEx3lVbrEVoKBFPju5EX8sxHh4d5ZrDRtME1hHM_Mo4QQ9SYyuSo1HlvY8TygciF2xSQ6H7OZsIS30Oaa5LN1oKq6khu002o10xb2qvOERp4uFKjDSj5B-Udy5kyJm-C7g.webp" alt="Bonana Sharkolo" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦈</span>
-                        Bonana Sharkolo
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Shark, Banana, Feet<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A fearsome shark that has somehow fused with banana properties. This aquatic predator can slip through water like a peeled banana.
-                    </div>
-                    <a href="https://www.tiktok.com/@lifewatching1/video/7486254146585201942" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 6: Lasagnani Bearini -->
-                <div class="character-card" id="lasagnani-bearini">
-                    <img src="../../../i/MqayY2JBeAgaD1TBnEkNSk-fACnh-ep6iNVc3w2HAj767rljYBQDfvUQ8LhahQWpDqUHSv6bp5oMuz_u3Q90U-ugGO2vEgIiHre3rQn0mWPwtyqvjZq-a8RhFlIOK9ItUova6LSmrpBgsgAbB6FoTA.webp" alt="Lasagnani Bearini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐻</span>
-                        Lasagnani Bearini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Bear, Lasagna, Feet<br>
-                        <strong>BGM:</strong> 一笑湖 -dJ Remix
-                    </div>
-                    <div class="character-description">
-                        A pasta-loving bear whose fur has transformed into layers of lasagna. This character represents the perfect fusion of Italian cuisine and wildlife.
-                    </div>
-                    <a href="https://www.tiktok.com/@lifewatching1/video/7486524524264033558" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 7: Coc Coconut -->
-                <div class="character-card" id="coc-coconut">
-                    <img src="../../../i/BCgpieStdy4HaqxEs1_DD84WLVXNTwnCeTTz9vDfoHGAZmhcuEcGr6qoqTr6FtagCwl309jZKLgEHot7I8RS5rQpy72GfZ7sjufwgaIgkeSnjQNNOoq9yj4kyXh3ZIneGyQe1sbSthraaZDIufC-_w.webp" alt="Coc Coconut" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🥥</span>
-                        Coc Coconut
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Macaque, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A tropical macaque that has evolved to become one with coconuts. This primate can crack open any nut with its specialized coconut-shell hands.
-                    </div>
-                    <a href="https://www.tiktok.com/@lifewatching1/video/7487748386494500118" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 8: Pipi Corni -->
-                <div class="character-card" id="pipi-corni">
-                    <img src="../../../i/DQ7BIR9feOxYLKykRVq0amjkky83HfAGSFzkMPkFhFJpIBpefNpUiseZTYqpzgs2Fy3rzHucp8eM0fZKxRzzI4V4dsr-puawnOU5spGrRWClN7Oy23arDO7G3fl1PaZJwWcnCGfVF9pkrgtgBaZTcQ.webp" alt="Pipi Corni" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐀</span>
-                        Pipi Corni
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Rat, Corn, Feet<br>
-                        <strong>BGM:</strong> 一笑湖 -dJ Remix
-                    </div>
-                    <div class="character-description">
-                        A rodent that has adapted to live among corn fields. Its body has taken on the yellow color and texture of corn kernels for perfect camouflage.
-                    </div>
-                    <a href="https://www.tiktok.com/@lifewatching1/video/7483927064463084822" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 9: Chef Crabracadabra -->
-                <div class="character-card" id="chef-crabracadabra">
-                    <img src="../../../i/RdczLnDUCl4eamYjuiEEQ3LwlnT4AngzS8Pbiy-tDpe9o-t4oJqCezOmMzK94x-8xG-NjOM7l0CJTMysbfzpxTASDtDg1zPstxGcxdMr-_0FVvJ7Y0Q7FU81RhXrXke0gHbwfN7VDk3z5lSLrK_hbg.webp" alt="Chef Crabracadabra" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦀</span>
-                        Chef Crabracadabra
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Chef, Crab, Abracadabra<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A chef with a crab's head and tongs, born in 1939. Formerly a fisherman who signed a contract with a sea witch to save villagers from famine.
-                    </div>
-                    <a href="https://www.tiktok.com/@mammamemea4/video/7511871384092429610" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 10: Penguinelli Cactussini -->
-                <div class="character-card" id="penguinelli-cactussini">
-                    <img src="../../../i/SgfrhQj6k4QNKUzqD0drp8SOhTgqTRu3fBF7zxSalP3XoDfPZHZraD-Wx0npXmC2fMRClXir6uwyhwf5Jc3CjTdDRqwKNAFCA5M8vmWjvTOfe7bBtnQ9YFEY6s60KNqMWegNnPCxMRCaI8ncx2NGPQ.webp" alt="Penguinelli Cactussini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐧</span>
-                        Penguinelli Cactussini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Penguin, Cactus, Cowboy, Shoes<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines penguins, cactuses, and cowboys. Also known as 'Lerululerle' or 'Peng Woolelli Cocksiny'.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7479234131231083798" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 11: Hipopotamino Supermaketino -->
-                <div class="character-card" id="hipopotamino-supermaketino">
-                    <img src="../../../i/ODDFmidnC1WeOLSHKdYCwbMlPBqHOvbLHt_nO2Ts7xasmqttVMJqsSzCUPJbDp4sHGXlOrdYJZdFsO8iOh5ALmXFDGuovuxMDyOUloALin0DrVFRAfxwWywj4uHvDO-o_iAn_NI0NAMQaCU_4kh23w.webp" alt="Hipopotamino Supermaketino" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦛</span>
-                        Hipopotamino Supermaketino
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Hippo, Supermarket<br>
-                        <strong>BGM:</strong> Suspense Horror Piano and Music box
-                    </div>
-                    <div class="character-description">
-                        A character that combines hippo and supermarket elements, creating a unique fusion of animal and commercial space.
-                    </div>
-                    <a href="https://www.tiktok.com/@froutatoudasous69/video/7482696122159385878" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 12: Raccooni Watermelunni -->
-                <div class="character-card" id="raccooni-watermelunni">
-                    <img src="../../../i/VGsCuCKjHzG6NCwvsXtvdlQPt5gWzew7sPKTrF7qaEjAuPa4eLuSYhdNrR6IBAbJE828-_N_Ptt8F-HhgYTgA_M4W_ppr1JEOzB-rKB2R956Y-34XcUbLKyQXuOWrszUWJlD77oigEVw1ggjWC3-xA.webp" alt="Raccooni Watermelunni" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦝</span>
-                        Raccooni Watermelunni
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Raccoon, Watermelon<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character with raccoons inside the watermelon, creating a playful and unexpected combination of wildlife and fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7483684674124958998" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 13: Cocossini Mama -->
-                <div class="character-card" id="cocossini-mama">
-                    <img src="../../../i/pYXbZuTNFBbS7tfwNTVic_4e5tmMtfmm4mtWlw62YFkFNw6ljlCBVnJ0zes1E0LXZU-LcRXEVPptCylCS0bizj3Zg8sOyHK2icuQe4_gS1OPF3D_w1HTD1JqM56oBL91QG15xY8g71-uJkpv2eTchw.webp" alt="Cocossini Mama" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦘</span>
-                        Cocossini Mama
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Kangaroo, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines kangaroo and coconut, featuring a maternal kangaroo with coconut elements.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7479775195180453142" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 14: Snooffi Zeffirulli -->
-                <div class="character-card" id="snooffi-zeffirulli">
-                    <img src="../../../i/SywIKUz9sYR4-jDSzQLOvhHvDd7A6oVB_uNiFuqoIh2hJ2Tz_eIFNfmX_fZKMOrPs1GE53incoiD7rWZi3tBq9RBAJqaz6jWGmChrCEnPsn1ZToC6MqU7CrDuQPqq1weOlj7w69slZcL5fL_BaDlmQ.webp" alt="Snooffi Zeffirulli" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦔</span>
-                        Snooffi Zeffirulli
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Hedgehog, Pineapple<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines hedgehogs and pineapples, part of the "Brie Brey Viccus Dikus Bombus and friends" group.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7479971522392755478" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 15: Perochello Lemonchello -->
-                <div class="character-card" id="perochello-lemonchello">
-                    <img src="../../../i/GmZORPp56YLvjSuyT3bVTamS4TjELPYPxKQNJA4lRi_2y288-GbPE0D1X0Ut1b-t1UqEakZxHHC030DW7C5C2uDyCPdLQFRmsvZiD5MLCNvbz1JnZopUrWuWhtQuiLujndsxutDwKbXtiV09OLEnag.webp" alt="Perochello Lemonchello" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦜</span>
-                        Perochello Lemonchello
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Parrot, Lemon<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines parrot and lemon, said to have a particular fondness for lemon flavors.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480350013399256342" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 16: Ananitto Giraffini -->
-                <div class="character-card" id="ananitto-giraffini">
-                    <img src="../../../i/AzGpKaGM143d8QERAUZyCynJbj0-LexoJkhEm-c6va8FEz9sVGfMuIJAm4FrLnZqHfl3aqiGouE_Bkl5AgLmjC7i8mQpVQQkRns1vkruoiGb8JF5ARRIR8oZ5wTr7cVl_HvSZA7Mx6gGrdZxvG5OWQ.webp" alt="Ananitto Giraffini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦒</span>
-                        Ananitto Giraffini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Pineapple, Giraffe<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines pineapple and giraffe, described as a huge and very long giraffe. Friend of Cocosini Mama and Kokoshino Reno.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 17: Cocosino Rhino -->
-                <div class="character-card" id="cocosino-rhino">
-                    <img src="../../../i/fJ7-1fH4loEar95H9rpb8lta1hrd0SkpBd_PSdpy3n3cXLQWT2RkwQWyB_WoO0uY7goabvqBFD4ITWhx9_dK5F2-ubJONGcWcc10-gHPn62y1AZV1Amv5G7Ko7N3x_tglyEwDFdlI3meGUXVIbGSgA.webp" alt="Cocosino Rhino" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦏</span>
-                        Cocosino Rhino
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Rhino, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines rhinos and coconuts, creating a unique fusion of powerful animal and tropical fruit elements.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7481667086532480278" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 18: Piccione Macchina -->
-                <div class="character-card" id="piccione-macchina">
-                    <img src="../../../i/ppMRbLZKPqDJsgmi7rgeQ57vSNSHdZ-Pz6Qhy__mPZQ-pPA2Y6zXWzvSpwsq6aoFfI3SnWFqwRW87pA4Yg1a71sQknQBMFpWndUTFJ1WgDM3D5T_QIv4igShDYpIpsirEE1FMJqLCoYXXAOh4W5GBQ.webp" alt="Piccione Macchina" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🚗</span>
-                        Piccione Macchina
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Tesla Cybertruck, Pigeon, Air Force<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character with a combination of Tesla Cybertruck and Pigeon wearing white Nike Air Force shoes. Leader of the Cybertruck Assassins Guild.
-                    </div>
-                    <a href="https://www.tiktok.com/@piccionemacchina/video/7495646680625188151" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 19: Cacasito Satelito -->
-                <div class="character-card" id="cacasito-satelito">
-                    <img src="../../../i/VHjAr-p9ozvAidnCZGS3nX1G364OHco0xsLyVVzD7s156s1-ds6weMXx_mAxYjVNFPh3njIHJbTO_RQuVAk1vk0BEcZsVqnKma5KW1P-cQjb6Fk6M2g5GTeWJNfTh3GgrgkIL5iJBTtig69rkPZmQw.webp" alt="Cacasito Satelito" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🛰️</span>
-                        Cacasito Satelito
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Rat, Satellite, Shoes<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines rats and satellites, often described as the largest character of the Italian Brainrot series.
-                    </div>
-                    <a href="https://www.tiktok.com/@betacrusader/video/7478856513004588310" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 20: Armodillo Cocodillo -->
-                <div class="character-card" id="armodillo-cocodillo">
-                    <img src="../../../i/OjdVyuVxTtsFwNWLFtXwwN-Ri3Tl36IvM_IrQqxO-J5xJg-oLyXq1GwjvsVPdCXGA84XTYMdOY1F-XS-2afsGKO3FDjVosQuHjVmy8fY1XKslSHKz4J_OG-aeoNAQ7TSkynrkemLvUjSY5nWGUQzzQ.webp" alt="Armodillo Cocodillo" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦔</span>
-                        Armodillo Cocodillo
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Armadillo, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A common Armadillo in the coconut of the desert beach, described as a strong and impenetrable character.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480529480231013654" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 21: Peachi Foxilini -->
-                <div class="character-card" id="peachi-foxilini">
-                    <img src="../../../i/JPAvq9nBfXQlPmmM6-rlQ1fFMRPFuF9sEf_SJQAALA1WPez1d8oMMjBdnlYeg_YXcNVF1Zig0FKpiau4JKzB3FlWTQK6aLb74Dz0x4qNOxoDL6mZiPavJm6GEKc56Z3mog67wCABXIjVzzMUeJ5GOQ.webp" alt="Peachi Foxilini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦊</span>
-                        Peachi Foxilini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Fox, Peach<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character with a combination of peaches and foxes, said to come from the meadows with cherry and cherry trees.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 22: Ananasita Owlita -->
-                <div class="character-card" id="ananasita-owlita">
-                    <img src="../../../i/IAcIKfvWLyS3I2_bLfclj4AGFG_fRSmSCnj5j9Q4b-UW8sstEVRqFOvHF5I6oiKrJLmX5OBowGFG0aCbQiCHOPM_JCS-Lq-VqNtbI6QZBe7L9fP6oEVlXCDhg50kk9JS38e5c9cdSD3OZ2AXQifkug.webp" alt="Ananasita Owlita" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦉</span>
-                        Ananasita Owlita
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Pineapple, Owl<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines pineapple and owl, creating a unique fusion of tropical fruit and nocturnal bird.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480697963325426946" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 23: Blueberrini Tatticini -->
-                <div class="character-card" id="blueberrini-tatticini">
-                    <img src="../../../i/0MzYNmbnBwH8kGu_FpSDL21-f2E7RGIQF-8TOTBkkUNhNEDmShnLQcGvK7-uGJK-6A3TvxqQenfLhxQfIjcgTrvGawTI922MQ5-r9xPvkuKxX0YgaEbaQ3sLqZD2cOVevIBOIaLQi7eecWGlv_m9ZA.webp" alt="Blueberrini Tatticini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐻</span>
-                        Blueberrini Tatticini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Bear, Blueberries<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A combination of blueberries and bears, with a friend relationship to Blueberini Oktopusini.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 24: Quivioli Ameleonni -->
-                <div class="character-card" id="quivioli-ameleonni">
-                    <img src="../../../i/sk3IdZyhLZv66FzJX09_sLh2xybtq9Vi9zMjPH2Dz7b7adueWQMBGKL9O1ZORmsE2FhJRIoEhkymKbUC_aRGpPXWtQKvCbaXNbZ7VtxGDPHdjQxQzcpA5q8EGcGimVIkpmRCkIlpZJWZ5LxOYrVgHQ.webp" alt="Quivioli Ameleonni" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦎</span>
-                        Quivioli Ameleonni
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Kiwi, Chameleon<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines chameleon and kiwi, with soft kiwi peel on the torso and the ability to change colors.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 25: Mangolini Parrocini -->
-                <div class="character-card" id="mangolini-parrocini">
-                    <img src="../../../i/klS6zX_AlUCSIDRFaMngU6mkUc3IcBOnkPWDoSzWsl4Zh_xM-LnPbohfgZFVLhOIiJXnjgIdTn1pXPxBo5IhT58TAugavMZKfux0O5cOCx1VQiCu5CN3ksi0ts_U8dXcKeb94SHkOzRlr5hD_GhnuA.webp" alt="Mangolini Parrocini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦜</span>
-                        Mangolini Parrocini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Mango, Parrot<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines mango and parrot elements, creating a tropical fusion of fruit and bird.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 26: Crabito Cocosito -->
-                <div class="character-card" id="crabito-cocosito">
-                    <img src="../../../i/placeholder-image.webp" alt="Crabito Cocosito" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦀</span>
-                        Crabito Cocosito
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Crab, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines crab and coconut elements, creating a unique fusion of sea creature and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 27: Don Don Don Satur -->
-                <div class="character-card" id="don-don-don-satur">
-                    <img src="../../../i/placeholder-image.webp" alt="Don Don Don Satur" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦈</span>
-                        Don Don Don Satur
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Shark, Donut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines shark and donut elements, creating a unique fusion of sea predator and sweet treat.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 28: Bombombona Pecorona -->
-                <div class="character-card" id="bombombona-pecorona">
-                    <img src="../../../i/placeholder-image.webp" alt="Bombombona Pecorona" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐑</span>
-                        Bombombona Pecorona
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Sheep, Bomb<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines sheep and bomb elements, creating a unique fusion of farm animal and explosive device.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 29: Suricatelli Bananelli -->
-                <div class="character-card" id="suricatelli-bananelli">
-                    <img src="../../../i/placeholder-image.webp" alt="Suricatelli Bananelli" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦦</span>
-                        Suricatelli Bananelli
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Meerkat, Banana<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines meerkat and banana elements, creating a unique fusion of desert animal and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 30: Burballoni Watermeloni -->
-                <div class="character-card" id="burballoni-watermeloni">
-                    <img src="../../../i/placeholder-image.webp" alt="Burballoni Watermeloni" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦫</span>
-                        Burballoni Watermeloni
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Beaver, Watermelon<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines beaver and watermelon elements, creating a unique fusion of river animal and summer fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 31: Tirilikalika Tirilikalako -->
-                <div class="character-card" id="tirilikalika-tirilikalako">
-                    <img src="../../../i/placeholder-image.webp" alt="Tirilikalika Tirilikalako" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦒</span>
-                        Tirilikalika Tirilikalako
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Giraffe, Musical<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines giraffe and musical elements, creating a unique fusion of tall animal and rhythmic sounds.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 32: Pippi Poppa Pippo Peppe -->
-                <div class="character-card" id="pippi-poppa-pippo-peppe">
-                    <img src="../../../i/placeholder-image.webp" alt="Pippi Poppa Pippo Peppe" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐧</span>
-                        Pippi Poppa Pippo Peppe
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Penguin, Pop<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines penguin and pop music elements, creating a unique fusion of arctic bird and musical genre.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 33: Robertooooo -->
-                <div class="character-card" id="robertooooo">
-                    <img src="../../../i/placeholder-image.webp" alt="Robertooooo" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦊</span>
-                        Robertooooo
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Fox, Extended Name<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character with an extended name, featuring a fox motif with a unique vocal pattern.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 34: Octo Cocosini -->
-                <div class="character-card" id="octo-cocosini">
-                    <img src="../../../i/placeholder-image.webp" alt="Octo Cocosini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐙</span>
-                        Octo Cocosini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Octopus, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines octopus and coconut elements, creating a unique fusion of sea creature and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 35: Elefantino Frigorifero -->
-                <div class="character-card" id="elefantino-frigorifero">
-                    <img src="../../../i/placeholder-image.webp" alt="Elefantino Frigorifero" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐘</span>
-                        Elefantino Frigorifero
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Elephant, Refrigerator<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines elephant and refrigerator elements, creating a unique fusion of large mammal and household appliance.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 36: Tigrrullini Kiwichini -->
-                <div class="character-card" id="tigrrullini-kiwichini">
-                    <img src="../../../i/placeholder-image.webp" alt="Tigrrullini Kiwichini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐯</span>
-                        Tigrrullini Kiwichini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Tiger, Kiwi<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines tiger and kiwi elements, creating a unique fusion of powerful predator and small fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 37: Tigrrullini Ananasini -->
-                <div class="character-card" id="tigrrullini-ananasini">
-                    <img src="../../../i/placeholder-image.webp" alt="Tigrrullini Ananasini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐯</span>
-                        Tigrrullini Ananasini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Tiger, Pineapple<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines tiger and pineapple elements, creating a unique fusion of powerful predator and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 38: Froggliatto Limitunni -->
-                <div class="character-card" id="froggliatto-limitunni">
-                    <img src="../../../i/placeholder-image.webp" alt="Froggliatto Limitunni" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐸</span>
-                        Froggliatto Limitunni
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Frog, Limon<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines frog and limon elements, creating a unique fusion of amphibian and citrus fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 39: Frugino Frullatorino -->
-                <div class="character-card" id="frugino-frullatorino">
-                    <img src="../../../i/placeholder-image.webp" alt="Frugino Frullatorino" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🍓</span>
-                        Frugino Frullatorino
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Strawberry, Blender<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines strawberry and blender elements, creating a unique fusion of sweet fruit and kitchen appliance.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 40: Buffallo Cactusuffalo -->
-                <div class="character-card" id="buffallo-cactusuffalo">
-                    <img src="../../../i/placeholder-image.webp" alt="Buffallo Cactusuffalo" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐃</span>
-                        Buffallo Cactusuffalo
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Buffalo, Cactus<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines buffalo and cactus elements, creating a unique fusion of large mammal and desert plant.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 41: Crocodildo Taxiccino -->
-                <div class="character-card" id="crocodildo-taxiccino">
-                    <img src="../../../i/placeholder-image.webp" alt="Crocodildo Taxiccino" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐊</span>
-                        Crocodildo Taxiccino
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Crocodile, Taxi<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines crocodile and taxi elements, creating a unique fusion of reptile and transportation.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 42: Makakini Cocosini -->
-                <div class="character-card" id="makakini-cocosini">
-                    <img src="../../../i/placeholder-image.webp" alt="Makakini Cocosini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐒</span>
-                        Makakini Cocosini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Macaque, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines macaque and coconut elements, creating a unique fusion of primate and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 43: Makakini Ananasini -->
-                <div class="character-card" id="makakini-ananasini">
-                    <img src="../../../i/placeholder-image.webp" alt="Makakini Ananasini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐒</span>
-                        Makakini Ananasini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Macaque, Pineapple<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines macaque and pineapple elements, creating a unique fusion of primate and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 44: Strawberrelli Flamingelli -->
-                <div class="character-card" id="strawberrelli-flamingelli">
-                    <img src="../../../i/placeholder-image.webp" alt="Strawberrelli Flamingelli" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦩</span>
-                        Strawberrelli Flamingelli
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Strawberry, Flamingo<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines strawberry and flamingo elements, creating a unique fusion of sweet fruit and elegant bird.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 45: Svinkrili Bombacini -->
-                <div class="character-card" id="svinkrili-bombacini">
-                    <img src="../../../i/placeholder-image.webp" alt="Svinkrili Bombacini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐷</span>
-                        Svinkrili Bombacini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Pig, Bomb<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines pig and bomb elements, creating a unique fusion of farm animal and explosive device.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 46: Gingobaló Gingobalì -->
-                <div class="character-card" id="gingobalo-gingobali">
-                    <img src="../../../i/placeholder-image.webp" alt="Gingobaló Gingobalì" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🍪</span>
-                        Gingobaló Gingobalì
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Gingerbread, Musical<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines gingerbread and musical elements, creating a unique fusion of cookie and rhythmic sounds.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 47: Batatoso Peloso -->
-                <div class="character-card" id="batatoso-peloso">
-                    <img src="../../../i/placeholder-image.webp" alt="Batatoso Peloso" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🥔</span>
-                        Batatoso Peloso
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Sweet Potato, Hairy<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines sweet potato and hairy elements, creating a unique fusion of root vegetable and furry texture.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 48: Pipi Avocado -->
-                <div class="character-card" id="pipi-avocado">
-                    <img src="../../../i/placeholder-image.webp" alt="Pipi Avocado" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🥑</span>
-                        Pipi Avocado
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Mouse, Avocado<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines mouse and avocado elements, creating a unique fusion of small rodent and healthy fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 49: Ciuf Ciuf Treno Pervertito -->
-                <div class="character-card" id="ciuf-ciuf-treno-pervertito">
-                    <img src="../../../i/placeholder-image.webp" alt="Ciuf Ciuf Treno Pervertito" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🚂</span>
-                        Ciuf Ciuf Treno Pervertito
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Train, Perverted<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines train and perverted elements, creating a unique fusion of transportation and unusual behavior.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 50: Pipi Banani -->
-                <div class="character-card" id="pipi-banani">
-                    <img src="../../../i/placeholder-image.webp" alt="Pipi Banani" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🍌</span>
-                        Pipi Banani
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Mouse, Banana<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines mouse and banana elements, creating a unique fusion of small rodent and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 51: Karkerkar Kurkur -->
-                <div class="character-card" id="karkerkar-kurkur">
-                    <img src="../../../i/placeholder-image.webp" alt="Karkerkar Kurkur" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦅</span>
-                        Karkerkar Kurkur
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Eagle, Sound<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines eagle and sound elements, creating a unique fusion of bird of prey and vocal patterns.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 52: Chimpanzini Cocosini -->
-                <div class="character-card" id="chimpanzini-cocosini">
-                    <img src="../../../i/placeholder-image.webp" alt="Chimpanzini Cocosini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦧</span>
-                        Chimpanzini Cocosini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Chimpanzee, Coconut<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines chimpanzee and coconut elements, creating a unique fusion of primate and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 53: Chimpanzini Ananasini -->
-                <div class="character-card" id="chimpanzini-ananasini">
-                    <img src="../../../i/placeholder-image.webp" alt="Chimpanzini Ananasini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦧</span>
-                        Chimpanzini Ananasini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Chimpanzee, Pineapple<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines chimpanzee and pineapple elements, creating a unique fusion of primate and tropical fruit.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 54: Il mastodontico telepiedone planetario -->
-                <div class="character-card" id="il-mastodontico-telepiedone-planetario">
-                    <img src="../../../i/placeholder-image.webp" alt="Il mastodontico telepiedone planetario" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🦕</span>
-                        Il mastodontico telepiedone planetario
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Mastodon, Telepiedone, Planetary<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines mastodon, telepiedone, and planetary elements, creating a unique fusion of prehistoric animal and cosmic concepts.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 55: Simoneeeee -->
-                <div class="character-card" id="simoneeeee">
-                    <img src="../../../i/placeholder-image.webp" alt="Simoneeeee" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">👤</span>
-                        Simoneeeee
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Human, Extended Name<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character with an extended name, featuring a human motif with a unique vocal pattern.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 56: Yang Mau Masuk -->
-                <div class="character-card" id="yang-mau-masuk">
-                    <img src="../../../i/placeholder-image.webp" alt="Yang Mau Masuk" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🌏</span>
-                        Yang Mau Masuk
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Indonesian, Entry<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character with Indonesian language elements, featuring a unique cultural fusion and entry concept.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 57: Coccodrillo Formaggioso -->
-                <div class="character-card" id="coccodrillo-formaggioso">
-                    <img src="../../../i/placeholder-image.webp" alt="Coccodrillo Formaggioso" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🧀</span>
-                        Coccodrillo Formaggioso
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Crocodile, Cheese<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines crocodile and cheese elements, creating a unique fusion of reptile and dairy product.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 58: Raspberrini Rabbitini -->
-                <div class="character-card" id="raspberrini-rabbitini">
-                    <img src="../../../i/placeholder-image.webp" alt="Raspberrini Rabbitini" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">🐰</span>
-                        Raspberrini Rabbitini
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Raspberry, Rabbit<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines raspberry and rabbit elements, creating a unique fusion of sweet berry and hopping mammal.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 59: Cappuccino Babuino -->
-                <div class="character-card" id="cappuccino-babuino">
-                    <img src="../../../i/placeholder-image.webp" alt="Cappuccino Babuino" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">☕</span>
-                        Cappuccino Babuino
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Cappuccino, Baboon<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines cappuccino and baboon elements, creating a unique fusion of coffee drink and primate.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-
-                <!-- Character 60: Bombardiro Cudcudach -->
-                <div class="character-card" id="bombardiro-cudcudach">
-                    <img src="../../../i/placeholder-image.webp" alt="Bombardiro Cudcudach" class="character-image" onerror="this.style.display='none'">
-                    <div class="character-name">
-                        <span class="character-icon">💣</span>
-                        Bombardiro Cudcudach
-                    </div>
-                    <div class="character-info">
-                        <strong>Motif:</strong> Bomb, Cudcudach<br>
-                        <strong>BGM:</strong> The Sound Of Your Fear
-                    </div>
-                    <div class="character-description">
-                        A character that combines bomb and cudcudach elements, creating a unique fusion of explosive device and mysterious concept.
-                    </div>
-                    <a href="https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702" target="_blank" class="tiktok-link">🎬 Watch on TikTok</a>
-                </div>
-                
-            </div>
-            
-            <div class="stats">
-                <h3>🚀 About Italian Brainrot Archive</h3>
-                <p>This archive documents the viral Italian Brainrot series that has taken TikTok by storm with millions of views.</p>
-                <p>Each character represents a unique mutation combining animals with various objects, foods, and concepts.</p>
-                <p class="highlight">Total Characters: 60 Unique Creations</p>
-                <p class="highlight">Total Views: Millions across TikTok, Instagram, and YouTube</p>
+            <div class="character-grid" id="character-grid">
+                <!-- Character cards will be loaded here -->
             </div>
         </div>
         
         <div class="toc-sidebar">
-            <div class="toc">
-                <h3>📑 Table of Contents</h3>
-                <ul>
-                    <li><a href="#talpa-di-ferro">🦫 Talpa Di Ferro</a></li>
-                    <li><a href="#octopussini-zucchini">🐙 Octopussini Zucchini</a></li>
-                    <li><a href="#borbano-capyformaggio">🧀 Borbano Capyformaggio</a></li>
-                    <li><a href="#pipi-mango">🥭 Pipi Mango</a></li>
-                    <li><a href="#bonana-sharkolo">🦈 Bonana Sharkolo</a></li>
-                    <li><a href="#lasagnani-bearini">🐻 Lasagnani Bearini</a></li>
-                    <li><a href="#coc-coconut">🥥 Coc Coconut</a></li>
-                    <li><a href="#pipi-corni">🐀 Pipi Corni</a></li>
-                    <li><a href="#chef-crabracadabra">🦀 Chef Crabracadabra</a></li>
-                    <li><a href="#penguinelli-cactussini">🐧 Penguinelli Cactussini</a></li>
-                    <li><a href="#hipopotamino-supermaketino">🦛 Hipopotamino Supermaketino</a></li>
-                    <li><a href="#raccooni-watermelunni">🦝 Raccooni Watermelunni</a></li>
-                    <li><a href="#cocossini-mama">🦘 Cocossini Mama</a></li>
-                    <li><a href="#snooffi-zeffirulli">🦔 Snooffi Zeffirulli</a></li>
-                    <li><a href="#perochello-lemonchello">🦜 Perochello Lemonchello</a></li>
-                    <li><a href="#ananitto-giraffini">🦒 Ananitto Giraffini</a></li>
-                    <li><a href="#cocosino-rhino">🦏 Cocosino Rhino</a></li>
-                    <li><a href="#piccione-macchina">🚗 Piccione Macchina</a></li>
-                    <li><a href="#cacasito-satelito">🛰️ Cacasito Satelito</a></li>
-                    <li><a href="#armodillo-cocodillo">🦔 Armodillo Cocodillo</a></li>
-                    <li><a href="#peachi-foxilini">🦊 Peachi Foxilini</a></li>
-                    <li><a href="#ananasita-owlita">🦉 Ananasita Owlita</a></li>
-                    <li><a href="#blueberrini-tatticini">🐻 Blueberrini Tatticini</a></li>
-                    <li><a href="#quivioli-ameleonni">🦎 Quivioli Ameleonni</a></li>
-                    <li><a href="#mangolini-parrocini">🦜 Mangolini Parrocini</a></li>
-                    <li><a href="#crabito-cocosito">🦀 Crabito Cocosito</a></li>
-                    <li><a href="#don-don-don-satur">🦈 Don Don Don Satur</a></li>
-                    <li><a href="#bombombona-pecorona">🐑 Bombombona Pecorona</a></li>
-                    <li><a href="#suricatelli-bananelli">🦦 Suricatelli Bananelli</a></li>
-                    <li><a href="#burballoni-watermeloni">🦫 Burballoni Watermeloni</a></li>
-                    <li><a href="#tirilikalika-tirilikalako">🦒 Tirilikalika Tirilikalako</a></li>
-                    <li><a href="#pippi-poppa-pippo-peppe">🐧 Pippi Poppa Pippo Peppe</a></li>
-                    <li><a href="#robertooooo">🦊 Robertooooo</a></li>
-                    <li><a href="#octo-cocosini">🐙 Octo Cocosini</a></li>
-                    <li><a href="#elefantino-frigorifero">🐘 Elefantino Frigorifero</a></li>
-                    <li><a href="#tigrrullini-kiwichini">🐯 Tigrrullini Kiwichini</a></li>
-                    <li><a href="#tigrrullini-ananasini">🐯 Tigrrullini Ananasini</a></li>
-                    <li><a href="#froggliatto-limitunni">🐸 Froggliatto Limitunni</a></li>
-                    <li><a href="#frugino-frullatorino">🍓 Frugino Frullatorino</a></li>
-                    <li><a href="#buffallo-cactusuffalo">🐃 Buffallo Cactusuffalo</a></li>
-                    <li><a href="#crocodildo-taxiccino">🐊 Crocodildo Taxiccino</a></li>
-                    <li><a href="#makakini-cocosini">🐒 Makakini Cocosini</a></li>
-                    <li><a href="#makakini-ananasini">🐒 Makakini Ananasini</a></li>
-                    <li><a href="#strawberrelli-flamingelli">🦩 Strawberrelli Flamingelli</a></li>
-                    <li><a href="#svinkrili-bombacini">🐷 Svinkrili Bombacini</a></li>
-                    <li><a href="#gingobalo-gingobali">🍪 Gingobaló Gingobalì</a></li>
-                    <li><a href="#batatoso-peloso">🥔 Batatoso Peloso</a></li>
-                    <li><a href="#pipi-avocado">🥑 Pipi Avocado</a></li>
-                    <li><a href="#ciuf-ciuf-treno-pervertito">🚂 Ciuf Ciuf Treno Pervertito</a></li>
-                    <li><a href="#pipi-banani">🍌 Pipi Banani</a></li>
-                    <li><a href="#karkerkar-kurkur">🦅 Karkerkar Kurkur</a></li>
-                    <li><a href="#chimpanzini-cocosini">🦧 Chimpanzini Cocosini</a></li>
-                    <li><a href="#chimpanzini-ananasini">🦧 Chimpanzini Ananasini</a></li>
-                    <li><a href="#il-mastodontico-telepiedone-planetario">🦕 Il mastodontico telepiedone planetario</a></li>
-                    <li><a href="#simoneeeee">👤 Simoneeeee</a></li>
-                    <li><a href="#yang-mau-masuk">🌏 Yang Mau Masuk</a></li>
-                    <li><a href="#coccodrillo-formaggioso">🧀 Coccodrillo Formaggioso</a></li>
-                    <li><a href="#raspberrini-rabbitini">🐰 Raspberrini Rabbitini</a></li>
-                    <li><a href="#cappuccino-babuino">☕ Cappuccino Babuino</a></li>
-                    <li><a href="#bombardiro-cudcudach">💣 Bombardiro Cudcudach</a></li>
-                </ul>
-            </div>
+            <div class="toc-title">Table of Contents</div>
+            <ul class="toc-list" id="toc-list">
+                <!-- TOC items will be loaded here -->
+            </ul>
         </div>
     </div>
 
     <script>
-        // Smooth scrolling for table of contents
-        document.querySelectorAll('.toc a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Active link highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.character-card');
-            const navLinks = document.querySelectorAll('.toc a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Force correct title continuously
-        document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
-        
-        setInterval(() => {
-            if (document.title !== 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki') {
-                document.title = 'Italian Brainrot Archive S2: Mutation Chronicles (August 2025) - NamuWiki';
+        // Character data - first 20 characters with real data
+        const characters = [
+            {
+                id: "talpa-di-ferro",
+                name: "Talpa Di Ferro",
+                image: "../../../i/FZXtwmQg5hsDkWKL_8FKRpQJGmtdLps56cd52m-fHhs9bxEgOJowQW5LTwv_R6KJ6vDutQfMJuOGFnP6j4gN4tXZCqlEhd4CReDxD5tUf-TP2JB5DfCbwwuzi4V2qhwRuitpJsMjuRzp4_SdvT51QA.webp",
+                motifs: ["Mole", "Cyborg"],
+                bgm: "The Sound Of Your Fear",
+                description: "A mechanized mole character with microchip-equipped eyes and forehead for scanning surrounding organisms. Features a small drill in front teeth that can penetrate any solid object, including metal.",
+                tiktok: "https://www.tiktok.com/@italianbrainrotanimals01/video/7524020191127211286"
+            },
+            {
+                id: "chef-crabracadabra",
+                name: "Chef Crabracadabra",
+                image: "../../../i/RdczLnDUCl4eamYjuiEEQ3LwlnT4AngzS8Pbiy-tDpe9o-t4oJqCezOmMzK94x-8xG-NjOM7l0CJTMysbfzpxTASDtDg1zPstxGcxdMr-_0FVvJ7Y0Q7FU81RhXrXke0gHbwfN7VDk3z5lSLrK_hbg.webp",
+                motifs: ["Chef", "Crab", "Abracadabra"],
+                bgm: "Various",
+                description: "A chef with a crab's head and tongs, born in 1939. Formerly a fisherman who became a crab after signing a contract with a sea witch. His tongs can tear anything and open dimensional portals.",
+                tiktok: "https://www.tiktok.com/@mammamemea4/video/7511871384092429610"
+            },
+            {
+                id: "penguinelli-cactussini",
+                name: "Penguinelli Cactussini",
+                image: "../../../i/SgfrhQj6k4QNKUzqD0drp8SOhTgqTRu3fBF7zxSalP3XoDfPZHZraD-Wx0npXmC2fMRClXir6uwyhwf5Jc3CjTdDRqwKNAFCA5M8vmWjvTOfe7bBtnQ9YFEY6s60KNqMWegNnPCxMRCaI8ncx2NGPQ.webp",
+                motifs: ["Penguin", "Cactus", "Cowboy", "Shoes"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines penguins, cactuses and cowboys. Also known as 'Lerululerle' or 'Peng Woolelli Cocksiny'.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7479234131231083798"
+            },
+            {
+                id: "hipopotamino-supermaketino",
+                name: "Hipopotamino Supermaketino",
+                image: "../../../i/ODDFmidnC1WeOLSHKdYCwbMlPBqHOvbLHt_nO2Ts7xasmqttVMJqsSzCUPJbDp4sHGXlOrdYJZdFsO8iOh5ALmXFDGuovuxMDyOUloALin0DrVFRAfxwWywj4uHvDO-o_iAn_NI0NAMQaCU_4kh23w.webp",
+                motifs: ["Hippo", "Supermarket"],
+                bgm: "Suspense Horror Piano and Music box",
+                description: "A character that combines hippo and supermarket elements.",
+                tiktok: "https://www.tiktok.com/@froutatoudasous69/video/7482696122159385878"
+            },
+            {
+                id: "raccooni-watermelunni",
+                name: "Raccooni Watermelunni",
+                image: "../../../i/VGsCuCKjHzG6NCwvsXtvdlQPt5gWzew7sPKTrF7qaEjAuPa4eLuSYhdNrR6IBAbJE828-_N_Ptt8F-HhgYTgA_M4W_ppr1JEOzB-rKB2R956Y-34XcUbLKyQXuOWrszUWJlD77oigEVw1ggjWC3-xA.webp",
+                motifs: ["Raccoon", "Watermelon"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with raccoons inside the watermelon.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7483684674124958998"
+            },
+            {
+                id: "cocossini-mama",
+                name: "Cocossini Mama",
+                image: "../../../i/pYXbZuTNFBbS7tfwNTVic_4e5tmMtfmm4mtWlw62YFkFNw6ljlCBVnJ0zes1E0LXZU-LcRXEVPptCylCS0bizj3Zg8sOyHK2icuQe4_gS1OPF3D_w1HTD1JqM56oBL91QG15xY8g71-uJkpv2eTchw.webp",
+                motifs: ["Kangaroo", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines kangaroo and coconut.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7479775195180453142"
+            },
+            {
+                id: "snooffi-zeffirulli",
+                name: "Snooffi Zeffirulli",
+                image: "../../../i/SywIKUz9sYR4-jDSzQLOvhHvDd7A6oVB_uNiFuqoIh2hJ2Tz_eIFNfmX_fZKMOrPs1GE53incoiD7rWZi3tBq9RBAJqaz6jWGmChrCEnPsn1ZToC6MqU7CrDuQPqq1weOlj7w69slZcL5fL_BaDlmQ.webp",
+                motifs: ["Hedgehog", "Pineapple"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines hedgehogs and pineapples. Brie Brey Viccus Dikus Bombus and friends.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7479971522392755478"
+            },
+            {
+                id: "perochello-lemonchello",
+                name: "Perochello Lemonchello",
+                image: "../../../i/GmZORPp56YLvjSuyT3bVTamS4TjELPYPxKQNJA4lRi_2y288-GbPE0D1X0Ut1b-t1UqEakZxHHC030DW7C5C2uDyCPdLQFRmsvZiD5MLCNvbz1JnZopUrWuWhtQuiLujndsxutDwKbXtiV09OLEnag.webp",
+                motifs: ["Parrot", "Lemon"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines parrot and lemon. It is said to like lemon.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7480350013399256342"
+            },
+            {
+                id: "ananitto-giraffini",
+                name: "Ananitto Giraffini",
+                image: "../../../i/AzGpKaGM143d8QERAUZyCynJbj0-LexoJkhEm-c6va8FEz9sVGfMuIJAm4FrLnZqHfl3aqiGouE_Bkl5AgLmjC7i8mQpVQQkRns1vkruoiGb8JF5ARRIR8oZ5wTr7cVl_HvSZA7Mx6gGrdZxvG5OWQ.webp",
+                motifs: ["Pineapple", "Giraffe"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pineapple and giraffe. Cocosini Mama is a friend, he has a child, and he is also a friend with Kokoshino Reno.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702"
+            },
+            {
+                id: "cocosino-rhino",
+                name: "Cocosino Rhino",
+                image: "../../../i/fJ7-1fH4loEar95H9rpb8lta1hrd0SkpBd_PSdpy3n3cXLQWT2RkwQWyB_WoO0uY7goabvqBFD4ITWhx9_dK5F2-ubJONGcWcc10-gHPn62y1AZV1Amv5G7Ko7N3x_tglyEwDFdlI3meGUXVIbGSgA.webp",
+                motifs: ["Rhino", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines rhinos and coconuts.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7481667086532480278"
+            },
+            {
+                id: "piccione-macchina",
+                name: "Piccione Macchina",
+                image: "../../../i/ppMRbLZKPqDJsgmi7rgeQ57vSNSHdZ-Pz6Qhy__mPZQ-pPA2Y6zXWzvSpwsq6aoFfI3SnWFqwRW87pA4Yg1a71sQknQBMFpWndUTFJ1WgDM3D5T_QIv4igShDYpIpsirEE1FMJqLCoYXXAOh4W5GBQ.webp",
+                motifs: ["Tesla Cybertruck", "Pigeon", "Air Force"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with a combination of Tesla Cybertrucks in Pigeon wearing white Nike Air Force shoes. Leader of the Cybertruck Assassins Guild.",
+                tiktok: "https://www.tiktok.com/@piccionemacchina/video/7495646680625188151"
+            },
+            {
+                id: "cacasito-satelito",
+                name: "Cacasito Satelito",
+                image: "../../../i/VHjAr-p9ozvAidnCZGS3nX1G364OHco0xsLyVVzD7s156s1-ds6weMXx_mAxYjVNFPh3njIHJbTO_RQuVAk1vk0BEcZsVqnKma5KW1P-cQjb6Fk6M2g5GTeWJNfTh3GgrgkIL5iJBTtig69rkPZmQw.webp",
+                motifs: ["Rats", "Satellites", "Shoes"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines rats and satellites. Often described as the largest character of the Italian Brainot character.",
+                tiktok: "https://www.tiktok.com/@betacrusader/video/7478856513004588310"
+            },
+            {
+                id: "armodillo-cocodillo",
+                name: "Armodillo Cocodillo",
+                image: "../../../i/OjdVyuVxTtsFwNWLFtXwwN-Ri3Tl36IvM_IrQqxO-J5xJg-oLyXq1GwjvsVPdCXGA84XTYMdOY1F-XS-2afsGKO3FDjVosQuHjVmy8fY1XKslSHKz4J_OG-aeoNAQ7TSkynrkemLvUjSY5nWGUQzzQ.webp",
+                motifs: ["Armadillo", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A common Armadillo in the coconut of the desert beach.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7480529480231013654"
+            },
+            {
+                id: "peachi-foxilini",
+                name: "Peachi Foxilini",
+                image: "../../../i/JPAvq9nBfXQlPmmM6-rlQ1fFMRPFuF9sEf_SJQAALA1WPez1d8oMMjBdnlYeg_YXcNVF1Zig0FKpiau4JKzB3FlWTQK6aLb74Dz0x4qNOxoDL6mZiPavJm6GEKc56Z3mog67wCABXIjVzzMUeJ5GOQ.webp",
+                motifs: ["Fox", "Peach"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with a combination of peaches and foxes. It is said that the cherry and cherry trees come from the meadows.",
+                tiktok: "https://www.tiktok.com/@alexey_pigeon/video/7480615386774375702"
+            },
+            {
+                id: "ananasita-owlita",
+                name: "Ananasita Owlita",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pineapple", "Owl"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pineapple and owl elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "blueberrini-tatticini",
+                name: "Blueberrini Tatticini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Blueberry", "Tactics"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines blueberry and tactical elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "quivioli-ameleonni",
+                name: "Quivioli Ameleonni",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Chameleon", "Quiver"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines chameleon and quiver elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "mangolini-parrocini",
+                name: "Mangolini Parrocini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Mango", "Parrot"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines mango and parrot elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "crabito-cocosito",
+                name: "Crabito Cocosito",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Crab", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines crab and coconut elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "don-don-don-satur",
+                name: "Don Don Don Satur",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Don", "Saturday"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines don and Saturday elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "bombombona-pecorona",
+                name: "Bombombona Pecorona",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Bomb", "Sheep"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines bomb and sheep elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "suricatelli-bananelli",
+                name: "Suricatelli Bananelli",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Meerkat", "Banana"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines meerkat and banana elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "burballoni-watermeloni",
+                name: "Burballoni Watermeloni",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Burrito", "Watermelon"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines burrito and watermelon elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "tirilikalika-tirilikalako",
+                name: "Tirilikalika Tirilikalako",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Tirilika", "Tirilika"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with tirilika elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "pippi-poppa-pippo-peppe",
+                name: "Pippi Poppa Pippo Peppe",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pippi", "Poppa", "Pippo", "Peppe"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with multiple pippi elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "robertooooo",
+                name: "Robertooooo",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Roberto"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character named Roberto with extended o's.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "octo-cocosini",
+                name: "Octo Cocosini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Octopus", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines octopus and coconut.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "elefantino-frigorifero",
+                name: "Elefantino Frigorifero",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Elephant", "Refrigerator"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines elephant and refrigerator elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "tigrrullini-kiwichini",
+                name: "Tigrrullini Kiwichini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Tiger", "Kiwi"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines tiger and kiwi elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "tigrrullini-ananasini",
+                name: "Tigrrullini Ananasini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Tiger", "Pineapple"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines tiger and pineapple elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "froggliatto-limitunni",
+                name: "Froggliatto Limitunni",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Frog", "Limits"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines frog and limits elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "frugino-frullatorino",
+                name: "Frugino Frullatorino",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Fruit", "Blender"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines fruit and blender elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "buffallo-cactusuffalo",
+                name: "Buffallo Cactusuffalo",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Buffalo", "Cactus"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines buffalo and cactus elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "crocodildo-taxiccino",
+                name: "Crocodildo Taxiccino",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Crocodile", "Taxi"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines crocodile and taxi elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "makakini-cocosini",
+                name: "Makakini Cocosini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Macaque", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines macaque and coconut elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "makakini-ananasini",
+                name: "Makakini Ananasini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Macaque", "Pineapple"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines macaque and pineapple elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "strawberrelli-flamingelli",
+                name: "Strawberrelli Flamingelli",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Strawberry", "Flamingo"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines strawberry and flamingo elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "svinkrili-bombacini",
+                name: "Svinkrili Bombacini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pig", "Bomb"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pig and bomb elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "gingobalo-gingobali",
+                name: "Gingobaló Gingobalì",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Gingko", "Baló", "Balì"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with gingko and baló/balì elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "batatoso-peloso",
+                name: "Batatoso Peloso",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Sweet Potato", "Hairy"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines sweet potato and hairy elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "pipi-avocado",
+                name: "Pipi Avocado",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pipi", "Avocado"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pipi and avocado elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "ciuf-ciuf-treno-pervertito",
+                name: "Ciuf Ciuf Treno Pervertito",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Train", "Perverted"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines train and perverted elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "pipi-banani",
+                name: "Pipi Banani",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pipi", "Banana"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pipi and banana elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "karkerkar-kurkur",
+                name: "Karkerkar Kurkur",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Karkerkar", "Kurkur"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with karkerkar and kurkur elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "chimpanzini-cocosini",
+                name: "Chimpanzini Cocosini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Chimpanzee", "Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines chimpanzee and coconut elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "chimpanzini-ananasini",
+                name: "Chimpanzini Ananasini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Chimpanzee", "Pineapple"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines chimpanzee and pineapple elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "il-mastodontico-telepiedone-planetario",
+                name: "Il mastodontico telepiedone planetario",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Mastodon", "Telepiedone", "Planetary"],
+                bgm: "The Sound Of Your Fear",
+                description: "A massive planetary telepiedone character.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "simoneeeee",
+                name: "Simoneeeee",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Simone"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character named Simone with extended e's.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "yang-mau-masuk",
+                name: "Yang Mau Masuk",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Yang", "Mau", "Masuk"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with yang, mau, and masuk elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "coccodrillo-formaggioso",
+                name: "Coccodrillo Formaggioso",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Crocodile", "Cheese"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines crocodile and cheese elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "raspberrini-rabbitini",
+                name: "Raspberrini Rabbitini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Raspberry", "Rabbit"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines raspberry and rabbit elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "cappuccino-babuino",
+                name: "Cappuccino Babuino",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Cappuccino", "Baboon"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines cappuccino and baboon elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "bombardiro-cudcudach",
+                name: "Bombardiro Cudcudach",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Bombardier", "Cudcudach"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines bombardier and cudcudach elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "pipi-corni",
+                name: "Pipi Corni",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pipi", "Horns"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pipi and horns elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "octopussini-zucchini",
+                name: "Octopussini Zucchini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Octopus", "Zucchini"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines octopus and zucchini elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "borbano-capyformaggio",
+                name: "Borbano Capyformaggio",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Capybara", "Cheese"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines capybara and cheese elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "pipi-mango",
+                name: "Pipi Mango",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Pipi", "Mango"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines pipi and mango elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "bonana-sharkolo",
+                name: "Bonana Sharkolo",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Banana", "Shark"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines banana and shark elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "lasagnani-bearini",
+                name: "Lasagnani Bearini",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Lasagna", "Bear"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character that combines lasagna and bear elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
+            },
+            {
+                id: "coc-coconut",
+                name: "Coc Coconut",
+                image: "../../../i/placeholder.jpg",
+                motifs: ["Coconut"],
+                bgm: "The Sound Of Your Fear",
+                description: "A character with coconut elements.",
+                tiktok: "https://www.tiktok.com/@placeholder"
             }
-        }, 100);
+        ];
+
+        // Function to create character cards
+        function createCharacterCard(character, index) {
+            return `
+                <div class="character-card" id="${character.id}">
+                    <img src="${character.image}" alt="${character.name}" class="character-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBGb3VuZDwvdGV4dD48L3N2Zz4='">
+                    <div class="character-name">${character.name}</div>
+                    <div class="character-motifs">
+                        ${character.motifs.map(motif => `<span class="motif-tag">${motif}</span>`).join('')}
+                    </div>
+                    <div class="character-bgm">BGM: ${character.bgm}</div>
+                    <div class="character-description">${character.description}</div>
+                    <a href="${character.tiktok}" target="_blank" class="tiktok-link">Watch on TikTok</a>
+                </div>
+            `;
+        }
+
+        // Function to create TOC items
+        function createTOCItem(character, index) {
+            return `
+                <li class="toc-item">
+                    <a href="#${character.id}" class="toc-link">
+                        <span class="toc-number">${index + 1}.</span>
+                        ${character.name}
+                    </a>
+                </li>
+            `;
+        }
+
+        // Populate the page
+        document.addEventListener('DOMContentLoaded', function() {
+            const characterGrid = document.getElementById('character-grid');
+            const tocList = document.getElementById('toc-list');
+
+            // Add character cards
+            characters.forEach((character, index) => {
+                characterGrid.innerHTML += createCharacterCard(character, index);
+            });
+
+            // Add TOC items
+            characters.forEach((character, index) => {
+                tocList.innerHTML += createTOCItem(character, index);
+            });
+
+            // Smooth scrolling for TOC links
+            document.querySelectorAll('.toc-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
